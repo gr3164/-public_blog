@@ -4,7 +4,6 @@ class CreateClients < ActiveRecord::Migration[5.2]
   	create_table :clients do |t|
   		t.text :content
   		
-
   		t.timestamps
   	end
   

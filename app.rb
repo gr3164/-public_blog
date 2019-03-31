@@ -9,7 +9,8 @@ class Client < ActiveRecord::Base
 	validates :content, presence: true
 end
 
-
+class Comment < ActiveRecord::Base
+end
 
 before do
 	@clients = Client.all
