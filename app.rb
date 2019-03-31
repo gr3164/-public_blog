@@ -6,6 +6,13 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:blog.db"
 
 class Client < ActiveRecord::Base
+	validates :content, presence: true
+end
+
+
+
+before do
+	@clients = Client.all
 end
 
 get '/' do
@@ -17,5 +24,11 @@ get '/new' do
 end
 
 post '/new' do
-  "Hello World"
+  c = Client.new params[:client]
+  if c.save
+  		erb :index
+  else
+  		@error = c.errors.full_messages.first
+  		erb :new
+  end
 end

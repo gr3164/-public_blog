@@ -1,4 +1,9 @@
 <h2>Новости:</h2>
 
-
+<% @clients.each do |client| %>
+	<p>
+		<%= client.content %>
+		
+	</p>
+<% end %>
 
