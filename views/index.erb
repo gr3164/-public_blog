@@ -3,6 +3,12 @@
 <% @clients.each do |client| %>
 	<p>
 		<%= client.content %>
+		<br>
+		<br>
+		Добавлен: <%= client.created_at %>
+		<br>
+		<a href="/details/<%= client.id %>">Коментарии</a>
+		<hr>
 		
 	</p>
 <% end %>

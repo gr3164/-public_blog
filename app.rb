@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
 end
 
 before do
-	@clients = Client.all
+	@clients = Client.order "created_at Desc"
 end
 
 get '/' do
@@ -33,3 +33,6 @@ post '/new' do
   		erb :new
   end
 end
+
+
+
